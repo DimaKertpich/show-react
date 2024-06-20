@@ -3,7 +3,7 @@ import useLoginPage from "./hooks";
 import LoginPage from "./LoginPage";
 
 const LoginPageContainer:FC = () => {
-    const loganPageProps = useLoginPage();
-    return <LoginPage {...loganPageProps}/>
+    const loginPageProps = useLoginPage();
+    return <LoginPage {...loginPageProps}/>
 }
 export default LoginPageContainer;
