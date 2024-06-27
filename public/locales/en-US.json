@@ -1,0 +1,7 @@
+{
+  "login": {
+    "emailPlaceholder": "Email",
+    "passPlaceholder": "Password",
+    "signIn": "Sign In"
+  }
+}
