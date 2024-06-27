@@ -1,0 +1,7 @@
+{
+  "login": {
+    "emailPlaceholder": "Емейл",
+    "passPlaceholder": "Пароль",
+    "signIn": "Увійти"
+  }
+}
