@@ -3,5 +3,11 @@
     "emailPlaceholder": "Емейл",
     "passPlaceholder": "Пароль",
     "signIn": "Увійти"
+  },
+  "header": {
+    "discount": "Знижки",
+    "forHim": "Для Нього",
+    "deliveryAndPayment": "Доставка та оплата",
+    "aboutUs": "Про нас"
   }
 }

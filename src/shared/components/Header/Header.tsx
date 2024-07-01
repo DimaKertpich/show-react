@@ -5,10 +5,13 @@ import ButtonComponent from './ButtonComponent';
 import SearchIcon from '@mui/icons-material/Search';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import { useTranslation } from 'react-i18next'; 
 
 
 
 const Header: FC = () =>{
+
+    const { t } = useTranslation();
 
     return(
         <AppBar position='fixed' sx={{ backgroundColor: '#141414'}}>
@@ -18,7 +21,7 @@ const Header: FC = () =>{
                     <Stack flexDirection={'row'} alignItems={'center'}>
                         <Typography 
                             className='jostMedium' sx={{fontSize: '22px'}}>
-                            FORGE
+                            {t("header.discount")}
                         </Typography>
                         <Stack 
                             direction={'row'}
@@ -26,7 +29,7 @@ const Header: FC = () =>{
                             spacing={2}
                             >
                             
-                            <ButtonComponent text='Знижки' />
+                            <ButtonComponent text={t("header.discount")} />
                             <ButtonComponent text='Для нього' />
                             <ButtonComponent text='Доставка та оплата' />
                             <ButtonComponent text='Про нас' />

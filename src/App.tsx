@@ -4,7 +4,7 @@ import { pageUrls } from "./pageUrls";
 import Header from './shared/components/Header';
 import LoginPage from "./pages/LoginPage";
 import { RecoilRoot } from "recoil";
-import SubHeader from "./pages/LoginPage/components/SubHeader/SubHeader";
+import SubHeader from "./pages/MainPage/Components/SubHeader";
 
 const App: FC = () => {
   return (
