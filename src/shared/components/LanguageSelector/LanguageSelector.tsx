@@ -21,6 +21,14 @@ const LanguageSelector: FC<LanguageSelectorProps> = ({
     >
       {languagesOptions.map((language) => (
         <MenuItem
+          sx={{
+            p: 0,
+            ml: 1,
+            border:
+              language.value === selectedLanguage
+                ? "1px solid #ffffff"
+                : undefined,
+          }}
           key={language.value}
           value={language.value}
           selected={language.value === selectedLanguage}
