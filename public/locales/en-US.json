@@ -5,9 +5,11 @@
     "signIn": "Sign In"
   },
   "header": {
+    "title": "Forge",
     "discount": "Discounts",
     "forHim": "For Him",
     "deliveryAndPayment": "Delivery and payment",
-    "aboutUs": "About Us"
+    "aboutUs": "About Us",
+    "novelties": "Novelties"
   }
 }

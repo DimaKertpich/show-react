@@ -1,22 +1,19 @@
 import React from "react";
-import '../../styles/main.scss';
+import "../../styles/main.scss";
 import { Button, ButtonProps } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
-interface Props extends ButtonProps{
-    text: string;
+interface Props extends ButtonProps {
+  text: string;
 }
 
-const ButtonComponent: React.FC<Props> = ({text, ...ButtonProps}) => {
-
-    return(
-        <Button
-            color={'inherit'}
-            className="montserratRegular"
-            {...ButtonProps}
-        >
-            {text}
-        </Button>
-    )
-}
+const ButtonComponent: React.FC<Props> = ({ text, ...ButtonProps }) => {
+  const { t } = useTranslation();
+  return (
+    <Button color={"inherit"} className="montserratRegular" {...ButtonProps}>
+      {t(text)}
+    </Button>
+  );
+};
 
 export default ButtonComponent;
