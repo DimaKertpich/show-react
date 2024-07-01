@@ -1,6 +1,12 @@
-import { AppBar, Container, Typography, Stack, Button } from '@mui/material';
+import '../../styles/main.scss'
+import { AppBar, Container, Typography, Stack } from '@mui/material';
 import { FC } from 'react';
-import '../../styles/main.scss';
+import ButtonComponent from './ButtonComponent';
+import SearchIcon from '@mui/icons-material/Search';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+
+
 
 const Header: FC = () =>{
 
@@ -8,21 +14,34 @@ const Header: FC = () =>{
         <AppBar position='fixed' sx={{ backgroundColor: '#141414'}}>
             <Container 
                 fixed
-                sx={{minHeight: '60px', pt: '12px'}}>
-                    <Stack flexDirection={'row'} alignItems={'center'} justifyContent={'space-between'}>
+                sx={{minHeight: '70px', pt: '18px'}}>
+                    <Stack flexDirection={'row'} alignItems={'center'}>
                         <Typography 
-                            className='poppins-light'>
+                            className='jostMedium' sx={{fontSize: '22px'}}>
                             FORGE
                         </Typography>
                         <Stack 
-                            flexDirection={'row'}
-                            justifyContent={'center'}
-                            alignItems={'center'}
+                            direction={'row'}
+                            sx={{pl: '60px'}}
+                            spacing={2}
                             >
                             
-                            <Button color={'inherit'}>Знижки</Button>
-                            <Button color={'inherit'}>Для нього</Button>
-                            <Button color={'inherit'}>Про нас</Button>
+                            <ButtonComponent text='Знижки' />
+                            <ButtonComponent text='Для нього' />
+                            <ButtonComponent text='Доставка та оплата' />
+                            <ButtonComponent text='Про нас' />
+                        </Stack>
+
+                        <Stack
+                            direction={'row'}
+                            alignItems={'center'}
+                            sx={{ml: 'auto'}}
+                            spacing={3}
+                            >
+                            
+                            <SearchIcon sx={{color: 'White', cursor: 'pointer'}} />
+                            <PersonOutlineOutlinedIcon sx={{color: 'White', cursor: 'pointer'}}/>
+                            <ShoppingBagOutlinedIcon sx={{color: 'White', cursor: 'pointer'}}/>
                         </Stack>
                     </Stack>
             </Container>

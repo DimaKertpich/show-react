@@ -1,26 +1,22 @@
 import { FC, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import { FC } from "react";
 import { pageUrls } from "./pageUrls";
+import Header from './shared/components/Header';
 import LoginPage from "./pages/LoginPage";
 import { RecoilRoot } from "recoil";
-import Header from './shared/components/Header';
+import SubHeader from "./pages/LoginPage/components/SubHeader/SubHeader";
 
 const App: FC = () => {
   return (
     <Suspense fallback="loading">
       <BrowserRouter>
         <RecoilRoot>
+          <Header />
+          <SubHeader />
           <Routes>
             <Route path={pageUrls.login} element={<LoginPage />} />
           </Routes>
         </RecoilRoot>
-        <Header />
-        <Routes>
-          <Route path={pageUrls.login} element={<LoginPage />}/>
-        </Routes>
       </BrowserRouter>
     </Suspense>
   );
