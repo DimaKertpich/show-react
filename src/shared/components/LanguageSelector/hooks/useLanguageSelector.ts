@@ -4,11 +4,16 @@ import { language } from "../../../state/language";
 import { LanguageSelectorResultProps } from "../LanguageSelectorProps";
 import { Option } from "../../../types";
 import i18n from "../../../../i18n";
+import { useEffectOnce } from "react-use";
 
 const useLanguageSelector = (): LanguageSelectorResultProps => {
   const [selectedLanguage, setSelectedLanguage] = useRecoilState<string>(
     language.atoms.languageSelector,
   );
+
+  useEffectOnce(() => {
+    setSelectedLanguage(i18n.language);
+  });
 
   const languagesOptions: Option[] = useMemo(() => {
     return [

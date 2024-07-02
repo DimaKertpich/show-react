@@ -1,0 +1,51 @@
+@import './fonts';
+
+body{
+    @include poppinsLight();
+    padding: 0;
+    margin: 0;
+}
+
+.poppinsLight{
+    @include poppinsLight();
+}
+
+.poppinsRegular{
+    @include poppinsRegular();
+}
+
+.poppinsMedium{
+    @include poppinsMedium();
+}
+
+// Montserrat
+
+.montserratRegular{
+    @include montserratRegular();
+}
+
+.montserratMedium{
+    @include montserratMedium();
+}
+
+.montserratSemiBold{
+    @include montserratSemiBold();
+}
+
+// Jost
+
+.jostLight{
+    @include jostLight();
+}
+
+.jostRegular{
+    @include jostRegular();
+}
+
+.jostMedium{
+    @include jostMedium();
+}
+
+.jostSemiBold{
+    @include jostSemiBold();
+}

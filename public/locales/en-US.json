@@ -3,5 +3,13 @@
     "emailPlaceholder": "Email",
     "passPlaceholder": "Password",
     "signIn": "Sign In"
+  },
+  "header": {
+    "title": "FORGE",
+    "discount": "Discounts",
+    "forHim": "For Him",
+    "deliveryAndPayment": "Delivery and payment",
+    "aboutUs": "About Us",
+    "novelties": "Novelties"
   }
 }
