@@ -1,7 +1,7 @@
 import "../../styles/main.scss";
-import { AppBar, Container, Typography, Stack } from "@mui/material";
+import { AppBar, Container, Typography, Stack, IconButton } from "@mui/material";
 import { FC } from "react";
-import ButtonComponent from "./ButtonComponent";
+import CommonButton from "../CommonButton";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
@@ -19,10 +19,10 @@ const Header: FC = () => {
             {t("header.title")}
           </Typography>
           <Stack direction={"row"} sx={{ pl: "60px" }} spacing={2}>
-            <ButtonComponent text="header.discount" />
-            <ButtonComponent text="header.forHim" />
-            <ButtonComponent text="header.deliveryAndPayment" />
-            <ButtonComponent text="header.aboutUs" />
+            <CommonButton text="header.discount" />
+            <CommonButton text="header.forHim" />
+            <CommonButton text="header.deliveryAndPayment" />
+            <CommonButton text="header.aboutUs" />
           </Stack>
 
           <Stack
@@ -32,13 +32,9 @@ const Header: FC = () => {
             spacing={3}
           >
             <LanguageSelector />
-            <SearchIcon sx={{ color: "White", cursor: "pointer" }} />
-            <PersonOutlineOutlinedIcon
-              sx={{ color: "White", cursor: "pointer" }}
-            />
-            <ShoppingBagOutlinedIcon
-              sx={{ color: "White", cursor: "pointer" }}
-            />
+            <IconButton><SearchIcon sx={{ color: "White", cursor: "pointer" }} /></IconButton>
+            <IconButton><PersonOutlineOutlinedIcon sx={{ color: "White", cursor: "pointer" }}/></IconButton>
+            <IconButton><ShoppingBagOutlinedIcon sx={{ color: "White", cursor: "pointer" }}/></IconButton>
           </Stack>
         </Stack>
       </Container>
