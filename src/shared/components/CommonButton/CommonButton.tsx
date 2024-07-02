@@ -7,7 +7,7 @@ interface Props extends ButtonProps {
   text: string;
 }
 
-const ButtonComponent: React.FC<Props> = ({ text, ...ButtonProps }) => {
+const CommonButton: React.FC<Props> = ({ text, ...ButtonProps }) => {
   const { t } = useTranslation();
   return (
     <Button color={"inherit"} className="montserratRegular" {...ButtonProps}>
@@ -16,4 +16,4 @@ const ButtonComponent: React.FC<Props> = ({ text, ...ButtonProps }) => {
   );
 };
 
-export default ButtonComponent;
+export default CommonButton;

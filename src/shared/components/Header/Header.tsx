@@ -1,5 +1,11 @@
 import "../../styles/main.scss";
-import { AppBar, Container, Typography, Stack, IconButton } from "@mui/material";
+import {
+  AppBar,
+  Container,
+  Typography,
+  Stack,
+  IconButton,
+} from "@mui/material";
 import { FC } from "react";
 import CommonButton from "../CommonButton";
 import SearchIcon from "@mui/icons-material/Search";
@@ -29,12 +35,18 @@ const Header: FC = () => {
             direction={"row"}
             alignItems={"center"}
             sx={{ ml: "auto" }}
-            spacing={3}
+            spacing={2}
           >
             <LanguageSelector />
-            <IconButton><SearchIcon sx={{ color: "White", cursor: "pointer" }} /></IconButton>
-            <IconButton><PersonOutlineOutlinedIcon sx={{ color: "White", cursor: "pointer" }}/></IconButton>
-            <IconButton><ShoppingBagOutlinedIcon sx={{ color: "White", cursor: "pointer" }}/></IconButton>
+            <IconButton sx={{ color: "White", cursor: "pointer" }}>
+              <SearchIcon />
+            </IconButton>
+            <IconButton sx={{ color: "White", cursor: "pointer" }}>
+              <PersonOutlineOutlinedIcon />
+            </IconButton>
+            <IconButton sx={{ color: "White", cursor: "pointer" }}>
+              <ShoppingBagOutlinedIcon />
+            </IconButton>
           </Stack>
         </Stack>
       </Container>
