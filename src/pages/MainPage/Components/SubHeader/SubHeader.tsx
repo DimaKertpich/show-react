@@ -9,25 +9,17 @@ const SubHeader = () => {
   const { t } = useTranslation();
   return (
     <Stack className="subHeader">
-      <Box className="subHeaderBoxImg subHeaderBoxImgLeft">
+      <Box className="subHeaderBoxImg" sx={{zIndex: '10'}}>
         <img className="subHeaderImg" src={noveltyImg} alt="img1"></img>
-        <div className="subHeaderBoxImgBefore">
-          <Typography sx={{ left: "30% !important" }}>
-            {t("header.discount")}
-          </Typography>
-        </div>
+        <Box className="subHeaderBoxBefore"><Typography>{t('header.discount')}</Typography></Box>
       </Box>
-      <Box className="subHeaderBoxImg subHeaderBoxImgCenter">
+      <Box className="subHeaderBoxImg" sx={{zIndex: '5'}}>
         <img className="subHeaderImg" src={forHimImg} alt="img2"></img>
-        <div className="subHeaderBoxImgBefore">
-          <Typography>{t("header.forHim")}</Typography>
-        </div>
+        <Box className="subHeaderBoxBefore"><Typography>{t('header.forHim')}</Typography></Box>
       </Box>
-      <Box className="subHeaderBoxImg subHeaderBoxImgRight">
+      <Box className="subHeaderBoxImg" sx={{zIndex: '1'}}>
         <img className="subHeaderImg" src={discounts} alt="img3"></img>
-        <div className="subHeaderBoxImgBefore">
-          <Typography>{t("header.novelties")}</Typography>
-        </div>
+        <Box className="subHeaderBoxBefore"><Typography>{t('header.novelties')}</Typography></Box>
       </Box>
     </Stack>
   );
