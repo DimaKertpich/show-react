@@ -1,10 +1,11 @@
 import { FC, Suspense } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate  } from "react-router-dom";
 import { pageUrls } from "./pageUrls";
 import Header from './shared/components/Header';
 import LoginPage from "./pages/LoginPage";
 import { RecoilRoot } from "recoil";
 import SubHeader from "./pages/MainPage/Components/SubHeader";
+import DeliveryAndPayment from "./pages/DeliveryAndPayment";
 
 const App: FC = () => {
   return (
@@ -12,9 +13,12 @@ const App: FC = () => {
       <BrowserRouter>
         <RecoilRoot>
           <Header />
-          <SubHeader />
           <Routes>
+          <Route path={pageUrls.delivery} element={<DeliveryAndPayment />} />
+            <Route path={pageUrls.main} element={<SubHeader />} />
             <Route path={pageUrls.login} element={<LoginPage />} />
+            
+            <Route path="/" element={<Navigate to={pageUrls.delivery} />} />
           </Routes>
         </RecoilRoot>
       </BrowserRouter>

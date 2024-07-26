@@ -1,3 +1,5 @@
 export const pageUrls = {
-  login: "login"
+  main: "main",
+  login: "login",
+  delivery: 'delivery'
 };

@@ -11,5 +11,37 @@
     "deliveryAndPayment": "Delivery and payment",
     "aboutUs": "About Us",
     "novelties": "Novelties"
+  },
+  "poppupwindow": {
+    "hoodies": "Hoodies",
+    "pants": "Pants",
+    "shirts": "Shirts",
+    "jackets": "Jackets",
+    "accessories": "Accessories",
+    "tShirts": "T-Shirts"
+  },
+  "deliveryandpay": {
+    "title": "DELIVERY AND PAYMENT",
+    "subtitle": "If you need additional information, contact us at +38 067 453 7008 and we will be happy to help you.",
+    "delivery": [
+      {
+        "deliverytitle": "Delivery",
+        "textfirst": "Delivery is carried out by the transport company 'Nova Poshta', the term is 1-3 days in Ukraine;",
+        "textsecond": "After sending the order, you will receive an SMS with the number of the express waybill, by which you can track your order on the novaposhta.ua website and find out the exact cost of delivery;",
+        "textthird": "When receiving an order, you must have a passport or driver's license with you;",
+        "textfourth": "The term of storage of the parcel at the post office is 5 working days. After the expiration of this period, the parcel is sent back without prior notification to the recipient."
+      },
+      {
+        "deliverytitle": "Payment",
+        "textfirst": "Cash on delivery upon receipt of the order at the Nova Poshta branch.",
+        "textsecond": "Payment by VISA and MasterCard cards immediately on the website."
+      },
+      {
+        "deliverytitle": "Return or exchange",
+        "Conditions": "If for any reason the order did not suit you, you can return this purchase within 14 calendar days from the day you received the product, provided that:",
+        "textfirst": "The product was not used/used;",
+        "textsecond": "Preserved product appearance, labels, packaging."
+      }
+    ]
   }
 }

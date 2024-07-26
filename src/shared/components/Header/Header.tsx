@@ -13,8 +13,13 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "../LanguageSelector";
+import PopupWindow from "./components/PopupWindow";
+import { HeaderProps } from "./HeaderProps";
+import Styles from './Header.module.scss';
+import AuthPage from './components/AuthPage/components';
 
-const Header: FC = () => {
+
+const Header: FC<HeaderProps> = ({shouldShowPopup, showPopUp}) => {
   const { t } = useTranslation();
 
   return (
@@ -26,7 +31,7 @@ const Header: FC = () => {
           </Typography>
           <Stack direction={"row"} sx={{ pl: "60px" }} spacing={2}>
             <CommonButton text="header.discount" />
-            <CommonButton text="header.forHim" />
+            <CommonButton onClick={shouldShowPopup}  text="header.forHim" />
             <CommonButton text="header.deliveryAndPayment" />
             <CommonButton text="header.aboutUs" />
           </Stack>
@@ -49,7 +54,10 @@ const Header: FC = () => {
             </IconButton>
           </Stack>
         </Stack>
-      </Container>
+      </Container> 
+
+      <PopupWindow className={showPopUp ? Styles.headerPopUp : Styles.headerPopUpHidden}/>
+
     </AppBar>
   );
 };
