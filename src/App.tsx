@@ -5,7 +5,7 @@ import Header from './shared/components/Header';
 import LoginPage from "./pages/LoginPage";
 import { RecoilRoot } from "recoil";
 import SubHeader from "./pages/MainPage/Components/SubHeader";
-import DeliveryAndPayment from "./pages/DeliveryAndPayment";
+import DeliveryAndPaymentPage from "./pages/DeliveryAndPaymentPage";
 
 const App: FC = () => {
   return (
@@ -14,7 +14,7 @@ const App: FC = () => {
         <RecoilRoot>
           <Header />
           <Routes>
-          <Route path={pageUrls.delivery} element={<DeliveryAndPayment />} />
+          <Route path={pageUrls.delivery} element={<DeliveryAndPaymentPage />} />
             <Route path={pageUrls.main} element={<SubHeader />} />
             <Route path={pageUrls.login} element={<LoginPage />} />
             

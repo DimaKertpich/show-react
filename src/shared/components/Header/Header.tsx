@@ -16,7 +16,6 @@ import LanguageSelector from "../LanguageSelector";
 import PopupWindow from "./components/PopupWindow";
 import { HeaderProps } from "./HeaderProps";
 import Styles from './Header.module.scss';
-import AuthPage from './components/AuthPage/components';
 
 
 const Header: FC<HeaderProps> = ({shouldShowPopup, showPopUp}) => {
