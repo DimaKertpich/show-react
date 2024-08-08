@@ -14,11 +14,10 @@ const App: FC = () => {
         <RecoilRoot>
           <Header />
           <Routes>
-          <Route path={pageUrls.delivery} element={<DeliveryAndPaymentPage />} />
             <Route path={pageUrls.main} element={<SubHeader />} />
+            <Route path={pageUrls.delivery} element={<DeliveryAndPaymentPage />} />
             <Route path={pageUrls.login} element={<LoginPage />} />
-            
-            <Route path="/" element={<Navigate to={pageUrls.delivery} />} />
+            <Route path="/" element={<Navigate to={pageUrls.main} />} />
           </Routes>
         </RecoilRoot>
       </BrowserRouter>

@@ -1,21 +1,21 @@
 @import './fonts';
 
 body{
-    @include poppinsLight();
+    @include nunitoSansLight();
     padding: 0;
     margin: 0;
 }
 
-.poppinsLight{
-    @include poppinsLight();
+.nunitoSansLight{
+    @include nunitoSansLight();
 }
 
-.poppinsRegular{
-    @include poppinsRegular();
+.nunitoSansRegular{
+    @include nunitoSansRegular();
 }
 
-.poppinsMedium{
-    @include poppinsMedium();
+.nunitoSansMedium{
+    @include nunitoSansMedium();
 }
 
 // Montserrat
@@ -30,22 +30,4 @@ body{
 
 .montserratSemiBold{
     @include montserratSemiBold();
-}
-
-// Jost
-
-.jostLight{
-    @include jostLight();
-}
-
-.jostRegular{
-    @include jostRegular();
-}
-
-.jostMedium{
-    @include jostMedium();
-}
-
-.jostSemiBold{
-    @include jostSemiBold();
 }

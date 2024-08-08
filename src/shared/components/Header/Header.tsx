@@ -16,6 +16,7 @@ import LanguageSelector from "../LanguageSelector";
 import PopupWindow from "./components/PopupWindow";
 import { HeaderProps } from "./HeaderProps";
 import Styles from './Header.module.scss';
+import { Link } from 'react-router-dom';
 
 
 const Header: FC<HeaderProps> = ({shouldShowPopup, showPopUp}) => {
@@ -25,13 +26,20 @@ const Header: FC<HeaderProps> = ({shouldShowPopup, showPopUp}) => {
     <AppBar position="fixed" sx={{ backgroundColor: "#141414" }}>
       <Container fixed sx={{ minHeight: "70px", pt: "18px" }}>
         <Stack flexDirection={"row"} alignItems={"center"}>
-          <Typography className="jostMedium" sx={{ fontSize: "22px" }}>
-            {t("header.title")}
-          </Typography>
+          <Link to="/main" style={{textDecoration: "none", color: "White"}}>
+            <Typography 
+              className="montserratMedium" 
+              sx={{ fontSize: "22px"}}>{t("header.title")} 
+            </Typography>
+          </Link>
           <Stack direction={"row"} sx={{ pl: "60px" }} spacing={2}>
             <CommonButton text="header.discount" />
             <CommonButton onClick={shouldShowPopup}  text="header.forHim" />
-            <CommonButton text="header.deliveryAndPayment" />
+            <Link 
+              style={{textDecoration: "none", color: "White"}} 
+              to="/delivery">
+              
+              <CommonButton text="header.deliveryAndPayment" /></Link>
             <CommonButton text="header.aboutUs" />
           </Stack>
 

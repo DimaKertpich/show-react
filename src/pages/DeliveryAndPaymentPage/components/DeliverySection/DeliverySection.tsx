@@ -11,7 +11,7 @@ type Props = {
 
 const DeliverySection: FC<Props> = ({ data, getIcon }) => {
   return (
-    <Stack sx={{ color: "#676767", marginTop: "20px" }}>
+    <Stack sx={{ color: "#676767", marginTop: "30px" }}>
       <Stack direction={"row"}>
         <FontAwesomeIcon
           style={{ fontSize: "18px", paddingTop: "7px" }}
@@ -26,8 +26,9 @@ const DeliverySection: FC<Props> = ({ data, getIcon }) => {
         </Typography>
       </Stack>
       {data.Conditions && (
-        <Typography sx={{ pt: "10px" }} gutterBottom>
-          {data.Conditions}
+        <Typography className="montserratRegular" 
+                    sx={{ pt: "10px" }} 
+                    gutterBottom>{data.Conditions}
         </Typography>
       )}
       <List sx={{ listStyleType: "disc", pl: "20px" }}>
