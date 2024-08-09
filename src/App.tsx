@@ -6,6 +6,7 @@ import LoginPage from "./pages/LoginPage";
 import { RecoilRoot } from "recoil";
 import SubHeader from "./pages/MainPage/Components/SubHeader";
 import DeliveryAndPaymentPage from "./pages/DeliveryAndPaymentPage";
+import Footer from "./shared/components/Footer";
 
 const App: FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: FC = () => {
             <Route path={pageUrls.login} element={<LoginPage />} />
             <Route path="/" element={<Navigate to={pageUrls.main} />} />
           </Routes>
+          <Footer />
         </RecoilRoot>
       </BrowserRouter>
     </Suspense>

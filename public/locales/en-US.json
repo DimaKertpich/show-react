@@ -43,5 +43,8 @@
         "textsecond": "Preserved product appearance, labels, packaging."
       }
     ]
+  },
+  "footer": {
+      "support": "Support"
   }
 }

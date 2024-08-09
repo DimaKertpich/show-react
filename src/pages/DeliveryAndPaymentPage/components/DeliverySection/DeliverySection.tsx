@@ -31,7 +31,7 @@ const DeliverySection: FC<Props> = ({ data, getIcon }) => {
                     gutterBottom>{data.Conditions}
         </Typography>
       )}
-      <List sx={{ listStyleType: "disc", pl: "20px" }}>
+      <List sx={{ listStyleType: "disc", p: "0 0 40px 20px" }}>
         <ListItem sx={{ display: "list-item" }}>{data.textfirst}</ListItem>
         <ListItem sx={{ display: "list-item" }}>{data.textsecond}</ListItem>
         {data.textthird && (
