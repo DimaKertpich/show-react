@@ -6,29 +6,83 @@ import {
   Stack,
   IconButton,
 } from "@mui/material";
-import { FC } from "react";
+import { FC, useCallback, useMemo, useState } from "react";
 import CommonButton from "../CommonButton";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "../LanguageSelector";
+import PopupWindow from "./components/PopupWindow";
+import { HeaderProps } from "./HeaderProps";
+import Styles from './Header.module.scss';
+import { Link, useNavigate } from 'react-router-dom';
+import { pageUrls } from "../../../pageUrls";
 
-const Header: FC = () => {
+const enum HeaderButtons {
+  Discount = 'Discount',
+  ForHim = 'ForHim',
+  DeliveryAndPayment = 'DeliveryAndPayment',
+  AboutUs = 'AboutUs'
+}
+
+type HeaderButtonOption = {
+  name: string,
+  value: HeaderButtons
+}
+
+const Header: FC<HeaderProps> = ({shouldShowPopup, showPopUp}) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const headerButtons = useMemo(() => {
+    return [
+      {
+        name: 'discount',
+        value: HeaderButtons.Discount
+      },
+      {
+        name: 'forHim',
+        value: HeaderButtons.ForHim
+      },
+      {
+        name: 'deliveryAndPayment',
+        value: HeaderButtons.DeliveryAndPayment
+      },
+      {
+        name: 'aboutUs',
+        value: HeaderButtons.AboutUs
+      }
+    ]
+  },[]);
+
+  const [selectedSection, setSelectetSection] = useState({} as HeaderButtonOption);
+
+  const handleSelectSection = useCallback((buttonValue: HeaderButtonOption) =>{
+    setSelectetSection(buttonValue)
+
+    if(buttonValue.value === HeaderButtons.ForHim){
+      shouldShowPopup();
+    }
+
+    navigate(pageUrls.delivery);
+
+  },[setSelectetSection, shouldShowPopup]);
 
   return (
     <AppBar position="fixed" sx={{ backgroundColor: "#141414" }}>
       <Container fixed sx={{ minHeight: "70px", pt: "18px" }}>
         <Stack flexDirection={"row"} alignItems={"center"}>
-          <Typography className="jostMedium" sx={{ fontSize: "22px" }}>
-            {t("header.title")}
-          </Typography>
+          <Link to="/main" style={{textDecoration: "none", color: "White"}}>
+            <Typography onClick={() => setSelectetSection({} as HeaderButtonOption)} className="montserratMedium" sx={{ fontSize: "22px"}}>{t("header.title")}</Typography>
+          </Link>
           <Stack direction={"row"} sx={{ pl: "60px" }} spacing={2}>
-            <CommonButton text="header.discount" />
-            <CommonButton text="header.forHim" />
-            <CommonButton text="header.deliveryAndPayment" />
-            <CommonButton text="header.aboutUs" />
+
+            {
+              headerButtons.map((headerButton) => (
+                <CommonButton onClick={() => handleSelectSection(headerButton)} className={ selectedSection === headerButton ? Styles.selectedSectionColor : undefined } key={headerButton.value} text={headerButton.name}></CommonButton>
+              ))
+            }
           </Stack>
 
           <Stack
@@ -49,7 +103,10 @@ const Header: FC = () => {
             </IconButton>
           </Stack>
         </Stack>
-      </Container>
+      </Container> 
+
+      <PopupWindow className={showPopUp ? Styles.headerPopUp : Styles.headerPopUpHidden}/>
+
     </AppBar>
   );
 };
