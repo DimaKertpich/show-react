@@ -10,7 +10,6 @@ const SubHeader = () => {
   return (
     <Stack className="subHeader">
       <Box className="subHeaderBoxImg">
-      <Box className="subHeaderBoxImg">
         <img className="subHeaderImg" src={noveltyImg} alt="img1"></img>
         <Box className="subHeaderBoxBefore">
           <Typography>{t("header.discount")}</Typography>
