@@ -10,7 +10,7 @@
     "forHim": "Для Нього",
     "deliveryAndPayment": "Доставка та оплата",
     "aboutUs": "Про нас",
-    "novelties": "Новики"
+    "new": "Новики"
   },
   "poppupwindow": {
     "hoodies": "Толстовки",
@@ -47,5 +47,5 @@
   "footer": {
       "support": "Підтримкка"
   }
-  
+
 }
