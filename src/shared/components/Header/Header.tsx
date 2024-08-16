@@ -62,7 +62,7 @@ const Header: FC<HeaderProps> = ({ shouldShowPopup, showPopUp }) => {
         navigate(pageUrls[buttonValue.value]);
       }
     },
-    [setSelectetSection, shouldShowPopup]
+    [setSelectetSection, shouldShowPopup, navigate]
   );
 
   return (
