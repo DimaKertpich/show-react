@@ -46,5 +46,8 @@
   },
   "footer": {
       "support": "Support"
+  },
+  "MainProductList": {
+    "title": "Recomendation"
   }
 }

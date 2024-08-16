@@ -60,12 +60,12 @@ const Header: FC<HeaderProps> = ({shouldShowPopup, showPopUp}) => {
 
   const handleSelectSection = useCallback((buttonValue: HeaderButtonOption) =>{
     setSelectetSection(buttonValue)
-
+    console.log('buttonValue' , buttonValue)
     if(buttonValue.value === HeaderButtons.ForHim){
       shouldShowPopup();
+    }else{
+      navigate(pageUrls[buttonValue.value]);
     }
-
-    navigate(pageUrls.delivery);
 
   },[setSelectetSection, shouldShowPopup]);
 
@@ -79,8 +79,8 @@ const Header: FC<HeaderProps> = ({shouldShowPopup, showPopUp}) => {
           <Stack direction={"row"} sx={{ pl: "60px" }} spacing={2}>
 
             {
-              headerButtons.map((headerButton) => (
-                <CommonButton onClick={() => handleSelectSection(headerButton)} className={ selectedSection === headerButton ? Styles.selectedSectionColor : undefined } key={headerButton.value} text={headerButton.name}></CommonButton>
+              headerButtons.map((headerButton: HeaderButtonOption) => (
+                <CommonButton onClick={() => handleSelectSection(headerButton)} className={ selectedSection === headerButton ? Styles.selectedSectionColor : undefined } key={headerButton.value} text={`header.${headerButton.name}`}></CommonButton>
               ))
             }
           </Stack>

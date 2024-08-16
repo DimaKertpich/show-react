@@ -3,3 +3,13 @@ export type Option = {
   value: string;
   icon?: string;
 };
+
+export type Product = {
+  id: number;
+  productName: string;
+  description: string;
+  price: number;
+  discount: number;
+  category: string;
+  images: string[];
+}
