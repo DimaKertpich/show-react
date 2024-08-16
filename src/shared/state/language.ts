@@ -1,13 +1,13 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 const keys = {
-  language: "language",
+  language: 'language',
 };
 
 const atoms = {
   languageSelector: atom({
     key: keys.language,
-    default: "en-US",
+    default: 'en-US',
   }),
 };
 export const language = {

@@ -12,4 +12,4 @@ export type Product = {
   discount: number;
   category: string;
   images: string[];
-}
+};

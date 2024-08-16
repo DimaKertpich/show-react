@@ -1,7 +1,7 @@
-import { RefObject, useCallback, useMemo, useRef } from "react";
-import { FormikProps } from "formik";
-import { FormikConfig } from "formik/dist/types";
-import { LoginPageFormValues, LoginPageResultProps } from "../LoginPageProps";
+import { RefObject, useCallback, useMemo, useRef } from 'react';
+import { FormikProps } from 'formik';
+import { FormikConfig } from 'formik/dist/types';
+import { LoginPageFormValues, LoginPageResultProps } from '../LoginPageProps';
 
 const useLoginPage = (): LoginPageResultProps => {
   const formRef = useRef<FormikProps<LoginPageFormValues>>();
@@ -14,8 +14,8 @@ const useLoginPage = (): LoginPageResultProps => {
     return {
       enableReinitialize: true,
       initialValues: {
-        email: "",
-        password: "",
+        email: '',
+        password: '',
       },
       onSubmit: submitForm,
       innerRef: formRef as RefObject<FormikProps<LoginPageFormValues>>,

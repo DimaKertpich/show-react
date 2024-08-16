@@ -45,10 +45,9 @@
     ]
   },
   "footer": {
-      "support": "Підтримкка"
+    "support": "Підтримкка"
   },
   "MainProductList": {
     "title": "Рекомендації"
   }
-
 }
