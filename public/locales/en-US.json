@@ -49,5 +49,8 @@
   },
   "MainProductList": {
     "title": "Recomendation"
+  },
+  "DiscountProductList": {
+    "title": "Discounts"
   }
 }
