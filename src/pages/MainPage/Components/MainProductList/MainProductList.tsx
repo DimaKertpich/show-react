@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Grid, Typography, CircularProgress, Stack } from '@mui/material';
-import ProductCard from '../../../../shared/components/CommonProductCard/ProductCard';
+import ProductCard from '../../../../shared/components/ProductCard/ProductCard';
 import { useTranslation } from 'react-i18next';
 import { MainProductListProps } from './MainProductListProps';
 

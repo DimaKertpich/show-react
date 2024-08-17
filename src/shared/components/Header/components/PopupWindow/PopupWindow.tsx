@@ -1,5 +1,5 @@
 import { Stack, Grid, Container, Typography } from '@mui/material';
-import { FC } from 'react';
+import { FC, useMemo } from 'react';
 import hoodies from '../../../../styles/img/popupWindow/1.jpg';
 import pants from '../../../../styles/img/popupWindow/2.jpg';
 import shirts from '../../../../styles/img/popupWindow/3.jpg';
@@ -14,32 +14,34 @@ type Props = { className?: string };
 const PopupWindow: FC<Props> = ({ className }) => {
   const { t } = useTranslation();
 
-  const clothingCategories: { image: string; name: string }[] = [
-    {
-      image: hoodies,
-      name: t('poppupwindow.hoodies'),
-    },
-    {
-      image: pants,
-      name: t('poppupwindow.pants'),
-    },
-    {
-      image: shirts,
-      name: t('poppupwindow.shirts'),
-    },
-    {
-      image: jackets,
-      name: t('poppupwindow.jackets'),
-    },
-    {
-      image: accessories,
-      name: t('poppupwindow.accessories'),
-    },
-    {
-      image: tShirts,
-      name: t('poppupwindow.tShirts'),
-    },
-  ];
+  const clothingCategories: { image: string; name: string }[] = useMemo(() => {
+    return [
+      {
+        image: hoodies,
+        name: t('poppupwindow.hoodies'),
+      },
+      {
+        image: pants,
+        name: t('poppupwindow.pants'),
+      },
+      {
+        image: shirts,
+        name: t('poppupwindow.shirts'),
+      },
+      {
+        image: jackets,
+        name: t('poppupwindow.jackets'),
+      },
+      {
+        image: accessories,
+        name: t('poppupwindow.accessories'),
+      },
+      {
+        image: tShirts,
+        name: t('poppupwindow.tShirts'),
+      },
+    ];
+  }, [t]);
 
   return (
     <Stack
