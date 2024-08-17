@@ -1,0 +1,19 @@
+---
+name: Pull Request Development Workflow
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    name: Run build
+    uses: ./.github/workflows/build.yaml
+
+  lint:
+    name: Run lint
+    uses: ./.github/workflows/lint.yaml
+
+  formatter:
+    name: Run formatter
+    uses: ./.github/workflows/formatter.yaml

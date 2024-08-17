@@ -1,51 +1,33 @@
 @import './fonts';
 
-body{
-    @include poppinsLight();
-    padding: 0;
-    margin: 0;
+body {
+  @include nunitoSansLight();
+  padding: 0;
+  margin: 0;
 }
 
-.poppinsLight{
-    @include poppinsLight();
+.nunitoSansLight {
+  @include nunitoSansLight();
 }
 
-.poppinsRegular{
-    @include poppinsRegular();
+.nunitoSansRegular {
+  @include nunitoSansRegular();
 }
 
-.poppinsMedium{
-    @include poppinsMedium();
+.nunitoSansMedium {
+  @include nunitoSansMedium();
 }
 
 // Montserrat
 
-.montserratRegular{
-    @include montserratRegular();
+.montserratRegular {
+  @include montserratRegular();
 }
 
-.montserratMedium{
-    @include montserratMedium();
+.montserratMedium {
+  @include montserratMedium();
 }
 
-.montserratSemiBold{
-    @include montserratSemiBold();
-}
-
-// Jost
-
-.jostLight{
-    @include jostLight();
-}
-
-.jostRegular{
-    @include jostRegular();
-}
-
-.jostMedium{
-    @include jostMedium();
-}
-
-.jostSemiBold{
-    @include jostSemiBold();
+.montserratSemiBold {
+  @include montserratSemiBold();
 }

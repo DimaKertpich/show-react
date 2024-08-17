@@ -1,4 +1,4 @@
-import { FormikConfig } from "formik/dist/types";
+import { FormikConfig } from 'formik/dist/types';
 
 export type LoginPageFormValues = {
   email: string;

@@ -1,57 +1,53 @@
 @import '../../../../shared/styles/_fonts.scss';
 
-.subHeader{
-    flex-direction: row !important;
-    height: 100vh;
-    overflow: hidden;
+.subHeader {
+  flex-direction: row !important;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.subHeaderBoxImg{
-    position: relative;
-    max-width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    cursor: pointer;
+.subHeaderBoxImg {
+  position: relative;
+  max-width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-
-.subHeaderImg{
-    width: 100%;
-    height: 100vh;
-    flex: 1;
-    object-fit: cover;
-    object-position: 20%;
+.subHeaderImg {
+  width: 100%;
+  height: 100vh;
+  flex: 1;
+  object-fit: cover;
+  object-position: 20%;
 }
 
-.subHeaderBoxBefore{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, .2);
-    transition: .2s ease-in-out;
+.subHeaderBoxBefore {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: 0.2s ease-in-out;
 
-    p{
-        @include montserratMedium();
+  p {
+    @include montserratMedium();
 
-        font-size: 22px;
-        margin-top: 440px;
-        text-align: center;
-        color: white;
-        opacity: 0;
-        transition: .2s ease-in-out;
-    }
+    font-size: 22px;
+    margin-top: 440px;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+  }
 }
 
-.subHeaderBoxImg:hover .subHeaderBoxBefore{
-    background: rgba(0, 0, 0, .5);
-    transition: .2s ease-in-out;
-    p{
-        opacity: 1;
-        transition: .2s ease-in-out;
-    }
+.subHeaderBoxImg:hover .subHeaderBoxBefore {
+  background: rgba(0, 0, 0, 0.5);
+  transition: 0.2s ease-in-out;
+  p {
+    opacity: 1;
+    transition: 0.2s ease-in-out;
+  }
 }
-
-
-

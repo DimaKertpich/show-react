@@ -1,3 +1,7 @@
 export const pageUrls = {
-  login: "login"
+  main: 'Main',
+  login: 'Login',
+  DeliveryAndPayment: 'Delivery',
+  Discount: 'Discount',
+  AboutUs: 'AboutUs',
 };

@@ -1,6 +1,6 @@
-import { FC } from "react";
-import LanguageSelector from "./LanguageSelector";
-import useLanguageSelector from "./hooks";
+import { FC } from 'react';
+import LanguageSelector from './LanguageSelector';
+import useLanguageSelector from './hooks';
 
 const LanguageSelectorContainer: FC = () => {
   const languageSelectorProps = useLanguageSelector();
