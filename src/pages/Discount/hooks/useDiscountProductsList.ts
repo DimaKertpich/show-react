@@ -1,10 +1,9 @@
 import { useMemo } from 'react';
 import { useInfiniteQuery } from '@tanstack/react-query';
-import { Product } from '../../../shared/types';
 import { DiscountProductsListProps } from '../DiscountProductsListProps';
 
 const useDiscountProductsList = (): DiscountProductsListProps => {
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading, isError } = useInfiniteQuery({
+  const discountQuery = useInfiniteQuery({
     queryKey: ['getDiscountProducts'],
     queryFn: async ({ pageParam }) => {
       return (
@@ -18,17 +17,23 @@ const useDiscountProductsList = (): DiscountProductsListProps => {
   });
 
   const products = useMemo(() => {
-    if (!data) return [];
-    return data.pages.flatMap((page) => page || []);
-  }, [data]);
+    if (!discountQuery.data) return [];
+    return discountQuery.data.pages.flatMap((page) => page || []);
+  }, [discountQuery]);
+
+  const loadMore = async () => {
+    if (discountQuery.hasNextPage && !discountQuery.isFetching) await discountQuery.fetchNextPage();
+  };
 
   return {
     products,
-    isLoading,
-    isError,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage,
+    isLoading: discountQuery.isFetching,
+    loadMore,
+    // isLoading,
+    // isError,
+    // fetchNextPage,
+    // hasNextPage,
+    // isFetchingNextPage,
   };
 };
 
