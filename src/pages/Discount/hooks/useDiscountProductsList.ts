@@ -29,11 +29,6 @@ const useDiscountProductsList = (): DiscountProductsListProps => {
     products,
     isLoading: discountQuery.isFetching,
     loadMore,
-    // isLoading,
-    // isError,
-    // fetchNextPage,
-    // hasNextPage,
-    // isFetchingNextPage,
   };
 };
 

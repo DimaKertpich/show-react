@@ -1,6 +1,6 @@
-import { FC, ReactNode, useEffect, useRef } from 'react';
+import { FC, ReactNode, useRef } from 'react';
 import { CircularProgress, Stack } from '@mui/material';
-import { useIntersection } from 'react-use';
+import { useIntersection, useUpdateEffect } from 'react-use';
 
 type Props = {
   children?: ReactNode;
@@ -12,16 +12,18 @@ const InfiniteScroll: FC<Props> = ({ children, callback, isLoading }) => {
   const intersection = useIntersection(loaderRef, {
     root: null,
     rootMargin: '0px',
-    threshold: 0.1,
+    threshold: 1,
   });
-  useEffect(() => {
-    if (intersection && callback) callback();
-  }, [intersection, callback]);
+  useUpdateEffect(() => {
+    if (intersection?.isIntersecting && callback) {
+      callback();
+    }
+  }, [intersection]);
 
   return (
     <Stack>
       {children}
-      <Stack alignItems="center" justifyContent="center" ref={loaderRef}>
+      <Stack alignItems="center" justifyContent="center" ref={loaderRef} sx={{ height: '50px', marginTop: '20px' }}>
         {isLoading && <CircularProgress />}
       </Stack>
     </Stack>

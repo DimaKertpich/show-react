@@ -33,7 +33,6 @@ const DiscountProductsList: FC<DiscountProductsListProps> = ({ products, isLoadi
           )}
         </Grid>
       </InfiniteScroll>
-      {/*<Button onClick={() => fetchNextPage()}>Load more</Button>*/}
     </Stack>
   );
 };
