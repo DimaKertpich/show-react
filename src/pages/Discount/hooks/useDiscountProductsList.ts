@@ -1,29 +1,34 @@
 import { useMemo } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import { useInfiniteQuery } from '@tanstack/react-query';
 import { Product } from '../../../shared/types';
 import { DiscountProductsListProps } from '../DiscountProductsListProps';
 
 const useDiscountProductsList = (): DiscountProductsListProps => {
-  const productsQuery = useQuery<Product[], Error>({
-    queryKey: ['products'],
-    queryFn: async (): Promise<Product[]> => {
-      return (await fetch('http://localhost:9090/api/products/get_products/with_discount')).json();
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading, isError } = useInfiniteQuery({
+    queryKey: ['getDiscountProducts'],
+    queryFn: async ({ pageParam }) => {
+      return (
+        await fetch(`http://localhost:9090/api/products/get_products/with_discount/several?_page=${pageParam}&_limit=4`)
+      ).json();
     },
-    enabled: true,
-    select: (data) => {
-      return data;
+    initialPageParam: 1,
+    getNextPageParam: (_, allPages) => {
+      return allPages.length + 1;
     },
   });
 
   const products = useMemo(() => {
-    if (!productsQuery.isSuccess) return [];
-    return productsQuery.data;
-  }, [productsQuery]);
+    if (!data) return [];
+    return data.pages.flatMap((page) => page || []);
+  }, [data]);
 
   return {
     products,
-    isLoading: productsQuery.isLoading,
-    isError: productsQuery.isError,
+    isLoading,
+    isError,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
   };
 };
 
