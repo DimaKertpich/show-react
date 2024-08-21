@@ -49,5 +49,8 @@
   },
   "MainProductList": {
     "title": "Рекомендації"
+  },
+  "DiscountProductList": {
+    "title": "Знижки"
   }
 }
