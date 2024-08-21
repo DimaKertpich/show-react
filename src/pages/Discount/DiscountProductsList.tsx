@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Grid, Typography, Stack } from '@mui/material';
-import ProductCard from '../../shared/components/CommonProductCard/ProductCard';
+import ProductCard from '../../shared/components/ProductCard';
 import { useTranslation } from 'react-i18next';
 import { DiscountProductsListProps } from './DiscountProductsListProps';
 import InfiniteScroll from '../../shared/components/InfiniteScroll';

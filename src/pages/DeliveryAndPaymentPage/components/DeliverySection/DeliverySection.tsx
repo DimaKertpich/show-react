@@ -21,9 +21,9 @@ const DeliverySection: FC<Props> = ({ data, getIcon }) => {
           {data.deliverytitle}
         </Typography>
       </Stack>
-      {data.Conditions && (
+      {data.conditions && (
         <Typography className="montserratRegular" sx={{ pt: '10px' }} gutterBottom>
-          {data.Conditions}
+          {data.conditions}
         </Typography>
       )}
       <List sx={{ listStyleType: 'disc', p: '0 0 40px 20px' }}>

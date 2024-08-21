@@ -8,7 +8,7 @@ export type DeliveryItem = {
   textsecond: string;
   textthird?: string;
   textfourth?: string;
-  Conditions?: string;
+  conditions?: string;
 };
 
 export type DeliveryAndPaymentPageResultProps = {
