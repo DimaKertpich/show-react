@@ -9,7 +9,7 @@ const Footer: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Stack sx={{ background: '#141414', p: '10px' }}>
+    <Stack sx={{ background: '#141414', p: '10px 0 10px 0' }}>
       <Container>
         <Stack flexDirection={'row'} sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Stack>

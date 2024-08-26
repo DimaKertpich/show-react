@@ -7,6 +7,7 @@ import { DeliveryAndPaymentPageProps, DeliveryItem } from './DeliveryAndPaymentP
 
 const DeliveryAndPaymentPage: FC<DeliveryAndPaymentPageProps> = ({ getIcon }) => {
   const { t } = useTranslation();
+
   const delivery: DeliveryItem[] = useMemo(() => {
     return t('deliveryandpay.delivery', {
       returnObjects: true,

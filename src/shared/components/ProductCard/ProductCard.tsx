@@ -45,9 +45,12 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
         <Typography className="montserratRegular" component="div">
           {product.productName}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {product.description}
-        </Typography>
+
+        <Stack direction={'row'} spacing={1}>
+          {product.sizes.map((item, index) => (
+            <>{item.stockQuantity && <Typography key={index + 1}>{item.size}</Typography>}</>
+          ))}
+        </Stack>
         <Stack direction={'row'} spacing={1}>
           {product.discount === 0 ? null : (
             <Typography
