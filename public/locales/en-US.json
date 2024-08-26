@@ -58,12 +58,13 @@
     {
       "aboutUsTitle": "Our principles:",
       "ourPrinciples": [
-        {"textFirst": "Quality is more important than quantity;"},
-        {"textSecond": "Authenticity;"},
-        {"textThird": "Be true to yourself and your audience;"},
-        {"textFourth": "Do not forget your principles."}]
+        { "textFirst": "Quality is more important than quantity;" },
+        { "textSecond": "Authenticity;" },
+        { "textThird": "Be true to yourself and your audience;" },
+        { "textFourth": "Do not forget your principles." }
+      ]
     },
-    { 
+    {
       "aboutUsTitle": "What is FORGE?",
       "description": "FORGE is a modern clothing brand that combines style, comfort and functionality. We create clothes for those who value quality and attention to detail. In our collection, you will find things that will emphasize your individuality and are ideal both for everyday wear and for special occasions. Forge is not just clothing, it's a way to express yourself."
     }
