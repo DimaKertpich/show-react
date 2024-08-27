@@ -53,6 +53,9 @@
   "DiscountProductList": {
     "title": "Знижки"
   },
+  "Errors": {
+    "NoAvailableProducts": "Вибачте, немає доступних товарів."
+  },
 
   "AboutUs": [
     {

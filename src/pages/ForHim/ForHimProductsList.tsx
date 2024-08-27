@@ -29,7 +29,7 @@ const ForHimProductsList: FC<ForHimProductsListProps> = ({ products, isLoading, 
               </Grid>
             ))
           ) : (
-            <Typography>No products available</Typography>
+            <Typography sx={{ textAlign: 'center' }}>{t('Errors.NoAvailableProducts')}</Typography>
           )}
         </Grid>
       </InfiniteScroll>

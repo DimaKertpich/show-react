@@ -11,6 +11,15 @@ import '../../../../styles/main.scss';
 import { useNavigate } from 'react-router-dom';
 import { pageUrls } from '../../../../../pageUrls';
 
+enum ForHimCategoriesEnum {
+  Hoodies = 'Hoodies',
+  Pants = 'Pants',
+  Shirts = 'Shirts',
+  Jackets = 'Jackets',
+  Accessories = 'Accessories',
+  TShirts = 'TShirts',
+}
+
 type Props = {
   className?: string;
   closePopUp: () => void;
@@ -20,44 +29,44 @@ const PopupWindow: FC<Props> = ({ className, closePopUp }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const clothingCategories: { image: string; name: string; englishName: string }[] = useMemo(() => {
+  const clothingCategories: { image: string; name: string; categoryName: string }[] = useMemo(() => {
     return [
       {
         image: hoodies,
         name: t('poppupwindow.hoodies'),
-        englishName: 'Hoodies',
+        categoryName: ForHimCategoriesEnum.Hoodies,
       },
       {
         image: pants,
         name: t('poppupwindow.pants'),
-        englishName: 'Pants',
+        categoryName: ForHimCategoriesEnum.Pants,
       },
       {
         image: shirts,
         name: t('poppupwindow.shirts'),
-        englishName: 'Shirts',
+        categoryName: ForHimCategoriesEnum.Shirts,
       },
       {
         image: jackets,
         name: t('poppupwindow.jackets'),
-        englishName: 'Jackets',
+        categoryName: ForHimCategoriesEnum.Jackets,
       },
       {
         image: accessories,
         name: t('poppupwindow.accessories'),
-        englishName: 'Accessories',
+        categoryName: ForHimCategoriesEnum.Accessories,
       },
       {
         image: tShirts,
         name: t('poppupwindow.tshirts'),
-        englishName: 'TShirts',
+        categoryName: ForHimCategoriesEnum.TShirts,
       },
     ];
   }, [t]);
 
   const onSelectCategory = useCallback(
-    (item: { image: string; name: string; englishName: string }) => {
-      navigate(`${pageUrls.ForHim}/${item.englishName}`);
+    (item: { image: string; name: string; categoryName: string }) => {
+      navigate(`${pageUrls.ForHim}/${item.categoryName}`);
       closePopUp();
     },
     [navigate, closePopUp]

@@ -29,7 +29,7 @@ const DiscountProductsList: FC<DiscountProductsListProps> = ({ products, isLoadi
               </Grid>
             ))
           ) : (
-            <Typography>No products available</Typography>
+            <Typography sx={{ textAlign: 'center' }}>{t('Errors.NoAvailableProducts')}</Typography>
           )}
         </Grid>
       </InfiniteScroll>

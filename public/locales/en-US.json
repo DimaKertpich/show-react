@@ -53,6 +53,9 @@
   "DiscountProductList": {
     "title": "Discounts"
   },
+  "Errors": {
+    "NoAvailableProducts": "Sorry, no available products."
+  },
 
   "AboutUs": [
     {
