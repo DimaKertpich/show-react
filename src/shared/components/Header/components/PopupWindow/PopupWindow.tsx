@@ -1,5 +1,5 @@
 import { Stack, Grid, Container, Typography } from '@mui/material';
-import { FC, useMemo } from 'react';
+import { FC, useCallback, useMemo } from 'react';
 import hoodies from '../../../../styles/img/popupWindow/1.jpg';
 import pants from '../../../../styles/img/popupWindow/2.jpg';
 import shirts from '../../../../styles/img/popupWindow/3.jpg';
@@ -8,40 +8,69 @@ import accessories from '../../../../styles/img/popupWindow/5.jpg';
 import tShirts from '../../../../styles/img/popupWindow/6.jpg';
 import { useTranslation } from 'react-i18next';
 import '../../../../styles/main.scss';
+import { useNavigate } from 'react-router-dom';
+import { pageUrls } from '../../../../../pageUrls';
 
-type Props = { className?: string };
+enum ForHimCategoriesEnum {
+  Hoodies = 'Hoodies',
+  Pants = 'Pants',
+  Shirts = 'Shirts',
+  Jackets = 'Jackets',
+  Accessories = 'Accessories',
+  TShirts = 'TShirts',
+}
 
-const PopupWindow: FC<Props> = ({ className }) => {
+type Props = {
+  className?: string;
+  closePopUp: () => void;
+};
+
+const PopupWindow: FC<Props> = ({ className, closePopUp }) => {
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const clothingCategories: { image: string; name: string }[] = useMemo(() => {
+  const clothingCategories: { image: string; name: string; categoryName: string }[] = useMemo(() => {
     return [
       {
         image: hoodies,
         name: t('poppupwindow.hoodies'),
+        categoryName: ForHimCategoriesEnum.Hoodies,
       },
       {
         image: pants,
         name: t('poppupwindow.pants'),
+        categoryName: ForHimCategoriesEnum.Pants,
       },
       {
         image: shirts,
         name: t('poppupwindow.shirts'),
+        categoryName: ForHimCategoriesEnum.Shirts,
       },
       {
         image: jackets,
         name: t('poppupwindow.jackets'),
+        categoryName: ForHimCategoriesEnum.Jackets,
       },
       {
         image: accessories,
         name: t('poppupwindow.accessories'),
+        categoryName: ForHimCategoriesEnum.Accessories,
       },
       {
         image: tShirts,
-        name: t('poppupwindow.tShirts'),
+        name: t('poppupwindow.tshirts'),
+        categoryName: ForHimCategoriesEnum.TShirts,
       },
     ];
   }, [t]);
+
+  const onSelectCategory = useCallback(
+    (item: { image: string; name: string; categoryName: string }) => {
+      navigate(`${pageUrls.ForHim}/${item.categoryName}`);
+      closePopUp();
+    },
+    [navigate, closePopUp]
+  );
 
   return (
     <Stack
@@ -62,7 +91,11 @@ const PopupWindow: FC<Props> = ({ className }) => {
               <Typography className="montserratMedium" sx={{ color: 'Black', fontSize: '18px' }}>
                 {item.name}
               </Typography>
-              <img src={item.image} style={{ width: '100%', marginTop: '10px', cursor: 'pointer' }} />
+              <img
+                src={item.image}
+                style={{ width: '100%', marginTop: '10px', cursor: 'pointer' }}
+                onClick={() => onSelectCategory(item)}
+              />
             </Grid>
           ))}
         </Grid>

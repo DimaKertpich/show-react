@@ -18,7 +18,7 @@
     "shirts": "Shirts",
     "jackets": "Jackets",
     "accessories": "Accessories",
-    "tShirts": "T-Shirts"
+    "tshirts": "T-Shirts"
   },
   "deliveryandpay": {
     "title": "DELIVERY AND PAYMENT",
@@ -52,6 +52,9 @@
   },
   "DiscountProductList": {
     "title": "Discounts"
+  },
+  "Errors": {
+    "NoAvailableProducts": "Sorry, no available products."
   },
 
   "AboutUs": [

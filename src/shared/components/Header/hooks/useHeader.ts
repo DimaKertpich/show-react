@@ -4,11 +4,14 @@ import { HeaderResultProps } from '../HeaderProps';
 const useHeader = (): HeaderResultProps => {
   const [showPopUp, setShowPopUp] = useState(false);
 
+  const closePopUp = useCallback(() => {
+    setShowPopUp(false);
+  }, [setShowPopUp]);
   const shouldShowPopup = useCallback(() => {
-    setShowPopUp(!showPopUp);
-  }, [showPopUp, setShowPopUp]);
+    setShowPopUp(true);
+  }, [setShowPopUp]);
 
-  return { shouldShowPopup, showPopUp };
+  return { shouldShowPopup, showPopUp, closePopUp };
 };
 
 export default useHeader;

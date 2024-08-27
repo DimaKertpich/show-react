@@ -2,10 +2,10 @@ import { FC } from 'react';
 import { Grid, Typography, Stack } from '@mui/material';
 import ProductCard from '../../shared/components/ProductCard';
 import { useTranslation } from 'react-i18next';
-import { DiscountProductsListProps } from './DiscountProductsListProps';
+import { ForHimProductsListProps } from './ForHimProductsListProps';
 import InfiniteScroll from '../../shared/components/InfiniteScroll';
 
-const DiscountProductsList: FC<DiscountProductsListProps> = ({ products, isLoading, loadMore }) => {
+const ForHimProductsList: FC<ForHimProductsListProps> = ({ products, isLoading, loadMore, pageTitle }) => {
   const { t } = useTranslation();
 
   return (
@@ -18,7 +18,7 @@ const DiscountProductsList: FC<DiscountProductsListProps> = ({ products, isLoadi
       }}
     >
       <Typography variant="h4" gutterBottom align="center">
-        {t('DiscountProductList.title')}
+        {t(`poppupwindow.${pageTitle}`)}
       </Typography>
       <InfiniteScroll callback={loadMore} isLoading={isLoading}>
         <Grid container spacing={1.5}>
@@ -37,4 +37,4 @@ const DiscountProductsList: FC<DiscountProductsListProps> = ({ products, isLoadi
   );
 };
 
-export default DiscountProductsList;
+export default ForHimProductsList;

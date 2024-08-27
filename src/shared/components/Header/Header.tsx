@@ -25,7 +25,7 @@ type HeaderButtonOption = {
   value: HeaderButtons;
 };
 
-const Header: FC<HeaderProps> = ({ shouldShowPopup, showPopUp }) => {
+const Header: FC<HeaderProps> = ({ shouldShowPopup, showPopUp, closePopUp }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -104,7 +104,7 @@ const Header: FC<HeaderProps> = ({ shouldShowPopup, showPopUp }) => {
         </Stack>
       </Container>
 
-      <PopupWindow className={showPopUp ? Styles.headerPopUp : Styles.headerPopUpHidden} />
+      <PopupWindow closePopUp={closePopUp} className={showPopUp ? Styles.headerPopUp : Styles.headerPopUpHidden} />
     </AppBar>
   );
 };

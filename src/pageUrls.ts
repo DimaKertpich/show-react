@@ -4,4 +4,5 @@ export const pageUrls = {
   DeliveryAndPayment: 'Delivery',
   Discount: 'Discount',
   AboutUs: 'AboutUs',
+  ForHim: 'ForHim',
 };
