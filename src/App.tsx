@@ -7,6 +7,7 @@ import { RecoilRoot } from 'recoil';
 import MainPage from './pages/MainPage';
 import DeliveryAndPaymentPage from './pages/DeliveryAndPaymentPage';
 import DiscountProductsList from './pages/Discount';
+import ForHimProductsList from './pages/ForHim';
 import AboutUsPage from './pages/AboutUsPage';
 import Footer from './shared/components/Footer';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -26,6 +27,7 @@ const App: FC = () => {
                 <Route path={pageUrls.DeliveryAndPayment} element={<DeliveryAndPaymentPage />} />
                 <Route path={pageUrls.login} element={<LoginPage />} />
                 <Route path={pageUrls.AboutUs} element={<AboutUsPage />} />
+                <Route path={`${pageUrls.ForHim}/:catagoryName`} element={<ForHimProductsList />} />
                 <Route path="/" element={<Navigate to={pageUrls.main} />} />
               </Routes>
               <Footer />
