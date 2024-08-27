@@ -11,7 +11,7 @@ type Props = {
 
 const DeliverySection: FC<Props> = ({ data, getIcon }) => {
   return (
-    <Stack sx={{ color: '#676767', marginTop: '30px' }}>
+    <Stack sx={{ color: '#676767', marginTop: '30px', position: 'relative' }}>
       <Stack direction={'row'}>
         <FontAwesomeIcon
           style={{ fontSize: '18px', paddingTop: '7px' }}

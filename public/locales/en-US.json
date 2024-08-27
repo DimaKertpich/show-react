@@ -52,5 +52,25 @@
   },
   "DiscountProductList": {
     "title": "Discounts"
-  }
+  },
+
+  "AboutUs": [
+    {
+      "aboutUsTitle": "We have no history. The future is ours..",
+      "description": "The idea of ​​creating a clothing brand appeared in the spring of 2019. You won't find any good story here. We just decided to make a cool product that would be unique and unlike any other. We hope to find like-minded people in Ukraine and the world and in the near future create something top with the FORGE INTERNATIONAL logo"
+    },
+    {
+      "aboutUsTitle": "Our principles:",
+      "ourPrinciples": [
+        { "textFirst": "Quality is more important than quantity;" },
+        { "textSecond": "Authenticity;" },
+        { "textThird": "Be true to yourself and your audience;" },
+        { "textFourth": "Do not forget your principles." }
+      ]
+    },
+    {
+      "aboutUsTitle": "What is FORGE?",
+      "description": "FORGE is a modern clothing brand that combines style, comfort and functionality. We create clothes for those who value quality and attention to detail. In our collection, you will find things that will emphasize your individuality and are ideal both for everyday wear and for special occasions. Forge is not just clothing, it's a way to express yourself."
+    }
+  ]
 }

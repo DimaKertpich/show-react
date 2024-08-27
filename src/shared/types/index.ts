@@ -4,12 +4,18 @@ export type Option = {
   icon?: string;
 };
 
+export type Size = {
+  size: string;
+  stockQuantity: boolean;
+};
+
 export type Product = {
   id: number;
   productName: string;
-  description: string;
+  description: string[];
   price: number;
   discount: number;
   category: string;
   images: string[];
+  sizes: Size[];
 };
