@@ -11,15 +11,18 @@ import ForHimProductsList from './pages/ForHim';
 import AboutUsPage from './pages/AboutUsPage';
 import Footer from './shared/components/Footer';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Box } from '@mui/material';
 const queryClient = new QueryClient();
 
 const App: FC = () => {
+  const footerHeight = 41;
+
   return (
     <QueryClientProvider client={queryClient}>
       <Suspense fallback="loading">
         <BrowserRouter>
           <RecoilRoot>
-            <div style={{ height: '100vh', width: '100%' }}>
+            <Box sx={{ minHeight: `calc(100vh - ${footerHeight}px)` }}>
               <Header />
               <Routes>
                 <Route path={pageUrls.Discount} element={<DiscountProductsList />} />
@@ -30,8 +33,8 @@ const App: FC = () => {
                 <Route path={`${pageUrls.ForHim}/:catagoryName`} element={<ForHimProductsList />} />
                 <Route path="/" element={<Navigate to={pageUrls.main} />} />
               </Routes>
-              <Footer />
-            </div>
+            </Box>
+            <Footer />
           </RecoilRoot>
         </BrowserRouter>
       </Suspense>
