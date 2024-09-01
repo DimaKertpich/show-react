@@ -9,11 +9,9 @@ const LoginPageForm: FC = () => {
   const { values, dirty } = useFormikContext<LoginPageFormValues>();
   const { t } = useTranslation();
 
-  console.log(values);
-
   return (
     <Form>
-      <Stack justifyContent="center" alignItems="center">
+      <Stack justifyContent="center" alignItems="center" sx={{ mt: '100px' }}>
         <Field
           name="email"
           sx={{ mt: 0, width: '300px' }}

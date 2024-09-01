@@ -9,6 +9,7 @@ import DeliveryAndPaymentPage from './pages/DeliveryAndPaymentPage';
 import DiscountProductsList from './pages/Discount';
 import ForHimProductsList from './pages/ForHim';
 import AboutUsPage from './pages/AboutUsPage';
+import AuthPageContainer from './pages/AuthPage/AuthPageContainer';
 import Footer from './shared/components/Footer';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Box } from '@mui/material';
@@ -33,6 +34,7 @@ const App: FC = () => {
                 <Route path={`${pageUrls.ForHim}/:catagoryName`} element={<ForHimProductsList />} />
                 <Route path="/" element={<Navigate to={pageUrls.main} />} />
               </Routes>
+              <AuthPageContainer />
             </Box>
             <Footer />
           </RecoilRoot>
