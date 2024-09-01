@@ -1,13 +1,10 @@
-import { Stack } from '@mui/material';
 import { FC } from 'react';
 import AuthPage from './AuthPage';
+import useRegistration from './hooks/useRegistration';
 
 const AuthPageContainer: FC = () => {
-  return (
-    <Stack>
-      <AuthPage />
-    </Stack>
-  );
+  const authPageProps = useRegistration();
+  return <AuthPage {...authPageProps} />;
 };
 
 export default AuthPageContainer;

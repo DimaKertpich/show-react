@@ -1,6 +1,6 @@
 import { Stack, Typography } from '@mui/material';
 import { FC } from 'react';
-import RegistraionPageForm from './components/RegistrationPageForm';
+import RegistrationPageForm from './components/RegistrationPageForm';
 import { Formik } from 'formik';
 import { AuthPageProps } from './AuthPageProps';
 
@@ -22,7 +22,7 @@ const AuthPage: FC<AuthPageProps> = ({ formProps }) => {
       <Typography textAlign={'center'}>Title</Typography>
 
       <Formik {...formProps}>
-        <RegistraionPageForm />
+        <RegistrationPageForm />
       </Formik>
     </Stack>
   );
