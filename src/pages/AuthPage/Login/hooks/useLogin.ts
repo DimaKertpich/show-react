@@ -6,7 +6,7 @@ import useLoginData from '../../../../shared/hooks/useLoginData';
 import { useCookie } from 'react-use';
 
 const useLogin = (): UserFormLoginResultProps => {
-  const [userCookie, setUserCookie] = useCookie('userId');
+  const [userCookie, setUserCookie] = useCookie('userToken');
   const formRef = useRef<FormikProps<UserFormLogin>>();
   const { postLoginMutation } = useLoginData();
 
@@ -17,10 +17,10 @@ const useLogin = (): UserFormLoginResultProps => {
           email: values.email,
           password: values.password,
         },
-        { onSuccess: (data) => console.log(data) }
+        { onSuccess: (data) => setUserCookie(data.token, { path: '/' }) }
       );
     },
-    [postLoginMutation]
+    [postLoginMutation, setUserCookie]
   );
 
   const formProps = useMemo<FormikConfig<UserFormLogin>>(() => {

@@ -4,13 +4,16 @@ import { UserFormLogin } from '../types';
 const useLoginData = () => {
   const postLoginMutation = useMutation({
     mutationFn: async (userData: UserFormLogin) => {
-      return fetch('http://localhost:9090/api/auth/login', {
+      const response = await fetch('http://localhost:9090/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(userData),
       });
+
+      const data = await response.json();
+      return data;
     },
   });
 
