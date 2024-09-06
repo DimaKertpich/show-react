@@ -12,8 +12,7 @@ const useLoginData = () => {
         body: JSON.stringify(userData),
       });
 
-      const data = await response.json();
-      return data;
+      return await response.json();
     },
   });
 
