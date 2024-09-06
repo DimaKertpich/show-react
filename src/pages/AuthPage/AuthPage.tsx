@@ -1,10 +1,9 @@
-import { Stack, Typography } from '@mui/material';
 import { FC } from 'react';
-import RegistrationPageForm from './components/RegistrationPageForm';
-import { Formik } from 'formik';
-import { AuthPageProps } from './AuthPageProps';
+import Registration from './Registration';
+import { Stack } from '@mui/material';
+import Login from './Login';
 
-const AuthPage: FC<AuthPageProps> = ({ formProps }) => {
+const AuthPage: FC = () => {
   return (
     <Stack
       sx={{
@@ -19,11 +18,8 @@ const AuthPage: FC<AuthPageProps> = ({ formProps }) => {
         boxSizing: 'border-box',
       }}
     >
-      <Typography textAlign={'center'}>Title</Typography>
-
-      <Formik {...formProps}>
-        <RegistrationPageForm />
-      </Formik>
+      {/* <Registration /> */}
+      <Login />
     </Stack>
   );
 };

@@ -1,5 +1,5 @@
 import { RefObject, useCallback, useMemo, useRef } from 'react';
-import { UserFormRegistrationResultProps } from '../../AuthPageProps';
+import { UserFormRegistrationResultProps } from '../RegistraionProps';
 import { UserFormRegistration } from '../../../../shared/types';
 import { FormikConfig, FormikProps } from 'formik';
 import useRegistrationData from '../../../../shared/hooks/useRegistrationData';
@@ -21,7 +21,7 @@ const useRegistration = (): UserFormRegistrationResultProps => {
           email: values.email,
           password: values.password,
         },
-        { onSuccess: () => navigate(pageUrls.login) }
+        { onSuccess: () => navigate(pageUrls.login) } // Need to fix
       );
     },
     [postRegistrationMutation, navigate]
