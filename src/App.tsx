@@ -13,6 +13,7 @@ import AuthPage from './pages/AuthPage';
 import Footer from './shared/components/Footer';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Box } from '@mui/material';
+import CreateProductPage from './pages/CreateProductPage';
 const queryClient = new QueryClient();
 
 const App: FC = () => {
@@ -26,6 +27,7 @@ const App: FC = () => {
             <Box sx={{ minHeight: `calc(100vh - ${footerHeight}px)` }}>
               <Header />
               <Routes>
+                <Route path={pageUrls.CreateProduct} element={<CreateProductPage />} />
                 <Route path={pageUrls.Discount} element={<DiscountProductsList />} />
                 <Route path={pageUrls.main} element={<MainPage />} />
                 <Route path={pageUrls.DeliveryAndPayment} element={<DeliveryAndPaymentPage />} />
