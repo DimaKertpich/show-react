@@ -16,7 +16,7 @@ const useCreateProduct = (): CreateProductPageResultProps => {
           productName: values.productName,
           description: values.description,
           price: values.price,
-          discount: values.discount,
+          discount: values.discount / 100,
           category: values.category,
           sizes: values.sizes,
           images: values.images,
