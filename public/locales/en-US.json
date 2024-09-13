@@ -75,5 +75,11 @@
       "aboutUsTitle": "What is FORGE?",
       "description": "FORGE is a modern clothing brand that combines style, comfort and functionality. We create clothes for those who value quality and attention to detail. In our collection, you will find things that will emphasize your individuality and are ideal both for everyday wear and for special occasions. Forge is not just clothing, it's a way to express yourself."
     }
-  ]
+  ],
+
+  "AuthPage": {
+    "title": "Personal office",
+    "registrationTitle": "Registration",
+    "loginTitle": "Authorization"
+  }
 }

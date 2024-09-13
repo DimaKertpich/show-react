@@ -5,4 +5,8 @@ export type UserFormLoginResultProps = {
   formProps: FormikConfig<UserFormLogin>;
 };
 
-export type LoginPageProps = UserFormLoginResultProps;
+export type LoginPageContainerProps = {
+  currentAuth: boolean;
+};
+
+export type LoginPageProps = UserFormLoginResultProps & LoginPageContainerProps;

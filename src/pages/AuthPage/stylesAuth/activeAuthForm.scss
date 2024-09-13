@@ -1,0 +1,21 @@
+.activeAuth {
+  left: 0 !important;
+}
+
+.baseRigstraion {
+  left: -360px !important;
+}
+
+.baseLogin {
+  left: 360px !important;
+}
+
+.animationAuthPageShow {
+  right: 0 !important;
+  transition: 0.2s ease-in;
+}
+
+.animationAuthPageHide {
+  right: -370px !important;
+  transition: 0.2s ease-in;
+}

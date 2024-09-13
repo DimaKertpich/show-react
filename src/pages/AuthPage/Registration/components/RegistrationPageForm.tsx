@@ -10,14 +10,16 @@ const RegistrationPageForm: FC = () => {
 
   return (
     <Form>
-      <Stack>
-        <Field name="username" component={TextFormField} placeholder="Field" hiddenLabel />
-        <Field name="email" component={TextFormField} placeholder="email" hiddenLabel />
-        <Field name="password" component={TextFormField} placeholder="password" hiddenLabel />
+      <Stack spacing={1}>
+        <Field name="username" component={TextFormField} placeholder="Name" hiddenLabel />
+        <Field name="email" component={TextFormField} placeholder="Email" hiddenLabel />
+        <Field name="password" component={TextFormField} placeholder="Password" hiddenLabel />
 
-        <Button type="submit" disabled={!dirty}>
-          Submit
-        </Button>
+        <Stack direction={'row'} justifyContent={'space-around'}>
+          <Button type="submit" disabled={!dirty}>
+            Submit
+          </Button>
+        </Stack>
       </Stack>
     </Form>
   );

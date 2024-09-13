@@ -1,10 +1,11 @@
 import { FC } from 'react';
 import Registration from './Registration';
 import useRegistration from './hooks/useRegistration';
+import { RegistrationContainerProps } from './RegistraionProps.tsx';
 
-const RegistrationContainer: FC = () => {
+const RegistrationContainer: FC<RegistrationContainerProps> = (props) => {
   const registrationPageProps = useRegistration();
-  return <Registration {...registrationPageProps} />;
+  return <Registration {...registrationPageProps} {...props} />;
 };
 
 export default RegistrationContainer;

@@ -12,6 +12,8 @@ import { HeaderProps } from './HeaderProps';
 import Styles from './Header.module.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { pageUrls } from '../../../pageUrls';
+import { useRecoilState } from 'recoil';
+import { authToggle } from '../../state/authToggle.ts';
 
 const enum HeaderButtons {
   Discount = 'Discount',
@@ -65,6 +67,12 @@ const Header: FC<HeaderProps> = ({ shouldShowPopup, showPopUp, closePopUp }) => 
     [setSelectetSection, shouldShowPopup, navigate]
   );
 
+  const [authToggleWindow, setAuthToggleWindow] = useRecoilState(authToggle.atoms.authToggleWindow);
+
+  const handleToggleAuthWindow = useCallback(() => {
+    setAuthToggleWindow(!authToggleWindow);
+  }, [authToggleWindow, setAuthToggleWindow]);
+
   return (
     <AppBar position="fixed" sx={{ backgroundColor: '#141414' }}>
       <Container fixed sx={{ minHeight: '70px', pt: '18px' }}>
@@ -94,7 +102,7 @@ const Header: FC<HeaderProps> = ({ shouldShowPopup, showPopUp, closePopUp }) => 
             <IconButton sx={{ color: 'White', cursor: 'pointer' }}>
               <SearchIcon />
             </IconButton>
-            <IconButton sx={{ color: 'White', cursor: 'pointer' }}>
+            <IconButton onClick={() => handleToggleAuthWindow()} sx={{ color: 'White', cursor: 'pointer' }}>
               <PersonOutlineOutlinedIcon />
             </IconButton>
             <IconButton sx={{ color: 'White', cursor: 'pointer' }}>

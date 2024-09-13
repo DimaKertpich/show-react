@@ -5,12 +5,13 @@ import TextFormField from '../../../../shared/components/TextFormField';
 import { UserFormLogin } from '../../../../shared/types';
 
 const LoginPageForm: FC = () => {
-  const { values, dirty } = useFormikContext<UserFormLogin>();
+  const { dirty } = useFormikContext<UserFormLogin>();
+
   return (
     <Form>
-      <Stack>
+      <Stack spacing={1}>
         <Field name="email" component={TextFormField} placeholder="email" hiddenLabel />
-        <Field name="password" component={TextFormField} placeholder="password" hiddenLabel />
+        <Field type="password" name="password" component={TextFormField} placeholder="password" hiddenLabel />
 
         <Button type="submit" disabled={!dirty}>
           Login

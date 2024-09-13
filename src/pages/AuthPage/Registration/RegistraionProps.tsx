@@ -5,4 +5,8 @@ export type UserFormRegistrationResultProps = {
   formProps: FormikConfig<UserFormRegistration>;
 };
 
-export type RegistraionPageProps = UserFormRegistrationResultProps;
+export type RegistrationContainerProps = {
+  currentAuth: boolean;
+};
+
+export type RegistraionPageProps = UserFormRegistrationResultProps & RegistrationContainerProps;

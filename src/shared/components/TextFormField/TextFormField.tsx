@@ -1,12 +1,14 @@
 import React from 'react';
-import { TextField } from '@mui/material';
+import { SxProps, TextField } from '@mui/material';
 import { FieldProps } from 'formik';
 import type { TextFieldProps } from '@mui/material';
 
-type Props = TextFieldProps & FieldProps;
+type Props = TextFieldProps & FieldProps & { styles: SxProps };
 
-export const TextFormField: React.FC<Props> = ({ field, placeholder, hiddenLabel, label, ...props }) => {
-  return <TextField {...props} {...field} placeholder={placeholder} label={hiddenLabel ? null : label} />;
+export const TextFormField: React.FC<Props> = ({ field, placeholder, hiddenLabel, label, styles, ...props }) => {
+  return (
+    <TextField {...props} {...field} placeholder={placeholder} label={hiddenLabel ? null : label} sx={{ ...styles }} />
+  );
 };
 
 export default TextFormField;

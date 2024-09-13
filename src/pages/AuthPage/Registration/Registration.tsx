@@ -1,26 +1,16 @@
-import { Stack, Typography } from '@mui/material';
+import { Stack } from '@mui/material';
 import { FC } from 'react';
 import RegistrationPageForm from './components/RegistrationPageForm';
 import { Formik } from 'formik';
 import { RegistraionPageProps } from './RegistraionProps';
+import '../stylesAuth/activeAuthForm.scss';
 
-const Registration: FC<RegistraionPageProps> = ({ formProps }) => {
+const Registration: FC<RegistraionPageProps> = ({ formProps, currentAuth }) => {
   return (
     <Stack
-      sx={{
-        width: '360px',
-        background: 'white',
-        height: '100vh',
-        position: 'fixed',
-        top: '0',
-        right: '0',
-        zIndex: '1200',
-        p: '60px 30px',
-        boxSizing: 'border-box',
-      }}
+      className={currentAuth ? 'activeAuth' : 'baseRigstraion'}
+      sx={{ position: 'absolute', width: '100%', transition: '.4s ease-out' }}
     >
-      <Typography textAlign={'center'}>Title</Typography>
-
       <Formik {...formProps}>
         <RegistrationPageForm />
       </Formik>
