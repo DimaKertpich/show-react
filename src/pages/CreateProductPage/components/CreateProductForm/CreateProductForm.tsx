@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Field, Form, useFormikContext } from 'formik';
-import { Button, Grid, IconButton, MenuItem } from '@mui/material';
+import { Button, Grid, IconButton, MenuItem, Stack, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { ProductForCreate } from '../../../../shared/types';
 import TextFormField from '../../../../shared/components/TextFormField';
@@ -32,119 +32,137 @@ const CreateProductForm: FC = () => {
   };
 
   return (
-    <Form>
-      <Grid container rowSpacing={3} spacing={1}>
-        <Grid item xs={12} sx={{ marginTop: '10px' }}>
-          <Field
-            sx={{ width: '720px' }}
-            name="productName"
-            component={TextFormField}
-            placeholder="Product Name"
-            hiddenLabel
-          />
-        </Grid>
+    <Stack alignItems={'center'} sx={{ pt: '120px' }}>
+      <Form>
+        <Stack sx={{ mb: '20px' }} textAlign={'center'}>
+          <Typography sx={{ fontSize: '22px' }}>Create Product</Typography>
+        </Stack>
 
-        <Grid item xs={12}>
-          <Field
-            sx={{ width: '720px' }}
-            name="description"
-            component={TextFormField}
-            placeholder="Description"
-            hiddenLabel
-          />
-        </Grid>
+        <Grid container direction={'column'} rowSpacing={3} spacing={1}>
+          <Grid item xs={6} sx={{ marginTop: '10px' }}>
+            <Field
+              name="productName"
+              component={TextFormField}
+              styles={{ width: '800px' }}
+              placeholder="Product Name"
+              hiddenLabel
+            />
+          </Grid>
 
-        <Grid item xs={12}>
-          <Field sx={{ width: '720px' }} name={`category`} component={SelectFormField} placeholder="Category">
-            <MenuItem value="Hoodies">Hoodies</MenuItem>
-            <MenuItem value="Pants">Pants</MenuItem>
-            <MenuItem value="Shirts">Shirts</MenuItem>
-            <MenuItem value="Jackets">Jackets</MenuItem>
-            <MenuItem value="TShirts">TShirts</MenuItem>
-            <MenuItem value="Accessories">Accessories</MenuItem>
-          </Field>
-        </Grid>
+          <Grid item xs={6}>
+            <Field
+              name="description"
+              component={TextFormField}
+              styles={{ width: '800px' }}
+              placeholder="Description"
+              hiddenLabel
+            />
+          </Grid>
 
-        <Grid item xs={6}>
-          <Field sx={{ width: '290px' }} name="price" component={TextFormField} placeholder="0" label="Price" />
-        </Grid>
+          <Grid item xs={12}>
+            <Field sx={{ width: '800px' }} name={`category`} component={SelectFormField} placeholder="Category">
+              <MenuItem value="Hoodies">Hoodies</MenuItem>
+              <MenuItem value="Pants">Pants</MenuItem>
+              <MenuItem value="Shirts">Shirts</MenuItem>
+              <MenuItem value="Jackets">Jackets</MenuItem>
+              <MenuItem value="TShirts">TShirts</MenuItem>
+              <MenuItem value="Accessories">Accessories</MenuItem>
+            </Field>
+          </Grid>
 
-        <Grid item xs={6}>
-          <Field sx={{ width: '290px' }} name="discount" component={TextFormField} placeholder="0" label="Discount" />
-        </Grid>
-
-        {values.sizes.map((size, index) => (
-          <Grid item xs={12} container alignItems="center" key={index} spacing={2}>
-            <Grid item xs={6}>
+          <Grid item>
+            <Stack justifyContent={'space-between'} direction={'row'} sx={{ width: '100%' }}>
+              <Field styles={{ width: '360px' }} name="price" component={TextFormField} placeholder="0" label="Price" />
               <Field
-                sx={{ width: '180px' }}
-                name={`sizes[${index}].sizeName`}
-                component={SelectFormField}
-                placeholder="Size"
-              >
-                <MenuItem value="S">S</MenuItem>
-                <MenuItem value="M">M</MenuItem>
-                <MenuItem value="L">L</MenuItem>
-                <MenuItem value="XL">XL</MenuItem>
-                <MenuItem value="XXL">XXL</MenuItem>
-              </Field>
-            </Grid>
-
-            <Grid item xs={3}>
-              <Field
-                sx={{ width: '180px' }}
-                name={`sizes[${index}].stockQuantity`}
-                label="Stock Quantity"
+                styles={{ width: '360px' }}
+                name="discount"
                 component={TextFormField}
                 placeholder="0"
+                label="Discount"
               />
-            </Grid>
-
-            <Grid item xs={3}>
-              <IconButton onClick={() => handleRemoveSize(index)} color="error">
-                <DeleteIcon />
-              </IconButton>
-            </Grid>
+            </Stack>
           </Grid>
-        ))}
 
-        <Grid item xs={12} sx={{ marginTop: '15px' }}>
-          <Button variant="outlined" onClick={handleAddSize}>
-            Add Size
-          </Button>
-        </Grid>
+          {values.sizes.map((size, index) => (
+            <Grid item xs={12} container key={index}>
+              <Stack justifyContent={'space-between'} direction={'row'} sx={{ width: '100%' }}>
+                <Field
+                  sx={{ width: '360px' }}
+                  name={`sizes[${index}].sizeName`}
+                  component={SelectFormField}
+                  placeholder="Size"
+                >
+                  <MenuItem value="S">S</MenuItem>
+                  <MenuItem value="M">M</MenuItem>
+                  <MenuItem value="L">L</MenuItem>
+                  <MenuItem value="XL">XL</MenuItem>
+                  <MenuItem value="XXL">XXL</MenuItem>
+                </Field>
 
-        {values.images.map((image, index) => (
-          <Grid item xs={12} container alignItems="center" key={index} spacing={2}>
-            <Grid item xs={12}>
-              <Field
-                sx={{ width: '682px' }}
-                name={`images[${index}].href`}
-                component={TextFormField}
-                placeholder="Image URL"
-                label={`Image ${index + 1}`}
-              />
+                <Field
+                  name={`sizes[${index}].stockQuantity`}
+                  label="Stock Quantity"
+                  component={TextFormField}
+                  placeholder="0"
+                />
 
-              <IconButton onClick={() => handleRemoveImage(index)} sx={{ marginTop: '8px' }} color="error">
-                <DeleteIcon />
-              </IconButton>
+                <IconButton sx={{ width: '60px' }} onClick={() => handleRemoveSize(index)} color="error">
+                  <DeleteIcon />
+                </IconButton>
+              </Stack>
             </Grid>
+          ))}
+
+          <Grid item xs={12} sx={{ marginTop: '15px' }}>
+            <Stack>
+              <Button
+                sx={{ '&:hover': { color: '#2F95FB' }, background: '#2F95FB', color: '#fff' }}
+                variant="outlined"
+                onClick={handleAddSize}
+              >
+                Add Size
+              </Button>
+            </Stack>
           </Grid>
-        ))}
 
-        <Grid item xs={12} sx={{ marginTop: '15px' }}>
-          <Button variant="outlined" onClick={handleAddImage}>
-            Add Image URL
-          </Button>
-        </Grid>
+          {values.images.map((image, index) => (
+            <Grid item container alignItems="center" key={index}>
+              <Stack sx={{ width: '100%' }} textAlign={'center'} direction={'row'} justifyContent={'space-between'}>
+                <Field
+                  styles={{ width: '660px' }}
+                  name={`images[${index}].href`}
+                  component={TextFormField}
+                  placeholder="Image URL"
+                  label={`Image ${index + 1}`}
+                />
 
-        <Grid item xs={12}>
-          <Button type="submit" disabled={!dirty}>
-            Submit
-          </Button>
+                <IconButton onClick={() => handleRemoveImage(index)} sx={{ marginTop: '8px' }} color="error">
+                  <DeleteIcon />
+                </IconButton>
+              </Stack>
+            </Grid>
+          ))}
+
+          <Grid item xs={12} sx={{ marginTop: '15px' }}>
+            <Stack>
+              <Button
+                sx={{ '&:hover': { color: '#2F95FB' }, background: '#2F95FB', color: '#fff' }}
+                variant="outlined"
+                onClick={handleAddImage}
+              >
+                Add Image URL
+              </Button>
+            </Stack>
+          </Grid>
+
+          <Stack sx={{ m: '40px 0 40px 0' }}>
+            <Button sx={{ fontSize: '18px' }} type="submit" disabled={!dirty}>
+              Submit
+            </Button>
+          </Stack>
         </Grid>
-      </Grid>
-    </Form>
+      </Form>
+    </Stack>
   );
 };
 export default CreateProductForm;
