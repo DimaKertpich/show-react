@@ -36,3 +36,22 @@ export type RegistrationResponse = {
   username: string;
   email: string;
 };
+
+export type ProductForCreate = {
+  productName: string;
+  description: string;
+  price: number;
+  discount: number;
+  category: string;
+  sizes: SizeForCreate[];
+  images: Image[];
+};
+
+export type SizeForCreate = {
+  sizeName: string;
+  stockQuantity: number;
+};
+
+export type Image = {
+  href: string;
+};

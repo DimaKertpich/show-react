@@ -5,4 +5,5 @@ export const pageUrls = {
   Discount: 'Discount',
   AboutUs: 'AboutUs',
   ForHim: 'ForHim',
+  CreateProduct: 'CreateProduct',
 };
