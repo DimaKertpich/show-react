@@ -6,7 +6,7 @@ export type UserFormLoginResultProps = {
 };
 
 export type LoginPageContainerProps = {
-  currentAuth: boolean;
+  currentAuthSelect: boolean;
 };
 
 export type LoginPageProps = UserFormLoginResultProps & LoginPageContainerProps;

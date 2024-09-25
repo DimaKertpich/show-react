@@ -79,6 +79,15 @@
   "AuthPage": {
     "title": "Особистий кабінет",
     "registrationTitle": "Реєстрація",
-    "loginTitle": "Авторизуватися"
+    "loginTitle": "Авторизуватися",
+    "createAcount": "Створити акаунт",
+    "login": "Увійти",
+    "name": "Ім'я",
+    "email": "Пошта",
+    "password": "Пароль"
+  },
+  "SuccessRegistr": {
+    "title": "Ваш акаунт створено",
+    "buttonText": "Авторизуватися"
   }
 }

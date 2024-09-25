@@ -6,7 +6,7 @@ export type UserFormRegistrationResultProps = {
 };
 
 export type RegistrationContainerProps = {
-  currentAuth: boolean;
+  currentAuthSelect: boolean;
 };
 
 export type RegistraionPageProps = UserFormRegistrationResultProps & RegistrationContainerProps;

@@ -80,6 +80,15 @@
   "AuthPage": {
     "title": "Personal office",
     "registrationTitle": "Registration",
-    "loginTitle": "Authorization"
+    "loginTitle": "Authorization",
+    "createAcount": "Create acount",
+    "login": "Login",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password"
+  },
+  "SuccessRegistr": {
+    "title": "Your account has been created",
+    "buttonText": "Log in"
   }
 }

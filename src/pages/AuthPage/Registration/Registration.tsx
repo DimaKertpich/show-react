@@ -5,10 +5,10 @@ import { Formik } from 'formik';
 import { RegistraionPageProps } from './RegistraionProps';
 import '../stylesAuth/activeAuthForm.scss';
 
-const Registration: FC<RegistraionPageProps> = ({ formProps, currentAuth }) => {
+const Registration: FC<RegistraionPageProps> = ({ formProps, currentAuthSelect }) => {
   return (
     <Stack
-      className={currentAuth ? 'activeAuth' : 'baseRigstraion'}
+      className={currentAuthSelect ? 'activeAuth' : 'baseRigstraion'}
       sx={{ position: 'absolute', width: '100%', transition: '.4s ease-out' }}
     >
       <Formik {...formProps}>

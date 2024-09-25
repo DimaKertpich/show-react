@@ -3,15 +3,19 @@ import { UserFormRegistrationResultProps } from '../RegistraionProps';
 import { UserFormRegistration } from '../../../../shared/types';
 import { FormikConfig, FormikProps } from 'formik';
 import useRegistrationData from '../../../../shared/hooks/useRegistrationData';
-// import { useCookie } from 'react-use';
-import { useNavigate } from 'react-router-dom';
-import { pageUrls } from '../../../../pageUrls';
+import { successRegister } from '../../../../shared/state/successRegister.ts';
+import { useRecoilState } from 'recoil';
 
 const useRegistration = (): UserFormRegistrationResultProps => {
-  // const [userIdCookie, setUserIdCookie] = useCookie('userId');
   const formRef = useRef<FormikProps<UserFormRegistration>>();
   const { postRegistrationMutation } = useRegistrationData();
-  const navigate = useNavigate();
+  const [successRegisterWindow, setSuccessRegisterWindow] = useRecoilState(successRegister.atoms.successRegisterWindow);
+
+  console.log('successRegisterWindow', successRegisterWindow);
+
+  const handleToggleSuccessWindow = useCallback(() => {
+    setSuccessRegisterWindow(true);
+  }, [setSuccessRegisterWindow]);
 
   const submitForm = useCallback(
     async (values: UserFormRegistration) => {
@@ -21,10 +25,10 @@ const useRegistration = (): UserFormRegistrationResultProps => {
           email: values.email,
           password: values.password,
         },
-        { onSuccess: () => navigate(pageUrls.login) } // Need to fix
+        { onSuccess: () => handleToggleSuccessWindow() } // Need to fix
       );
     },
-    [postRegistrationMutation, navigate]
+    [postRegistrationMutation, handleToggleSuccessWindow]
   );
 
   const formProps = useMemo<FormikConfig<UserFormRegistration>>(() => {

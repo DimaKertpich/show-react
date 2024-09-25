@@ -5,10 +5,10 @@ import { Formik } from 'formik';
 import { LoginPageProps } from './LoginProps';
 import '../stylesAuth/activeAuthForm.scss';
 
-const Login: FC<LoginPageProps> = ({ formProps, currentAuth }) => {
+const Login: FC<LoginPageProps> = ({ formProps, currentAuthSelect }) => {
   return (
     <Stack
-      className={currentAuth ? 'baseLogin' : 'activeAuth'}
+      className={currentAuthSelect ? 'baseLogin' : 'activeAuth'}
       sx={{
         position: 'absolute',
         left: '360px',
